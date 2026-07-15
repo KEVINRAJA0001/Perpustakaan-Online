@@ -1,43 +1,78 @@
 Dashboard Perpustakaan
-Aplikasi web manajemen perpustakaan yang dibangun menggunakan Node.js, Express, dan MySQL dengan arsitektur REST API dan Vanilla HTML/CSS/JS di sisi frontend. Aplikasi ini untuk SOAL 2 UAS.
 
-Fitur Utama
-Dashboard & Katalog Buku: Melihat katalog buku dan status ketersediaannya (Tersedia/Dipinjam).
-Pencarian Buku: Fitur pencarian buku berdasarkan judul secara real-time.
-Manajemen Buku (CRUD): Menambah, mengubah, menghapus data buku beserta upload gambar sampul.
-Manajemen Peminjam (CRUD): Menambah, mengubah, menghapus data anggota perpustakaan.
-Transaksi Peminjaman & Pengembalian: Mencatat peminjaman buku (status otomatis menjadi 'Dipinjam') dan pengembalian buku (status kembali menjadi 'Tersedia').
+Aplikasi web untuk mengelola data perpustakaan yang dikembangkan menggunakan Node.js, Express.js, dan MySQL dengan konsep REST API. Antarmuka pengguna dibuat menggunakan HTML, CSS, dan JavaScript murni (Vanilla JS) sehingga aplikasi ringan dan mudah digunakan. Proyek ini dibuat sebagai penyelesaian Soal 2 Ujian Akhir Semester (UAS).
+
+Fitur Aplikasi
+Dashboard & Daftar Buku
+Menampilkan seluruh koleksi buku beserta informasi statusnya, apakah masih tersedia atau sedang dipinjam.
+Pencarian Buku
+Memudahkan pengguna mencari buku berdasarkan judul dengan hasil yang diperbarui secara langsung (real-time).
+Pengelolaan Data Buku (CRUD)
+Menambahkan, mengubah, melihat, dan menghapus data buku, termasuk fitur upload gambar sampul.
+Pengelolaan Data Anggota (CRUD)
+Mengelola informasi peminjam atau anggota perpustakaan melalui fungsi tambah, edit, dan hapus data.
+Peminjaman dan Pengembalian Buku
+Mencatat transaksi peminjaman serta pengembalian buku. Status buku akan berubah otomatis menjadi Dipinjam saat dipinjam dan kembali menjadi Tersedia setelah dikembalikan.
 Teknologi yang Digunakan
-Backend: Node.js, Express.js
-Database: MySQL (via XAMPP), mysql2
-Upload File: multer
-Frontend: HTML5, CSS3 (Custom Premium Design), Vanilla JavaScript
-Cara Instalasi dan Menjalankan Proyek
-Persiapan Database (XAMPP)
 
-Pastikan Apache dan MySQL sudah berjalan di XAMPP Control Panel.
-Buka phpMyAdmin (http://localhost/phpmyadmin) atau terminal MySQL.
-Import file setup_db.sql atau eksekusi seluruh perintah di dalamnya untuk membuat database db_perpustakaan beserta tabel-tabelnya.
-Alternatif: Anda bisa menjalankan perintah node setup_db.js pada terminal di dalam folder proyek untuk melakukan setup otomatis.
-Instalasi Dependensi
+Backend
 
-Buka terminal/Command Prompt, arahkan ke folder proyek ini.
-Jalankan perintah:
+Node.js
+Express.js
+
+Database
+
+MySQL
+mysql2
+
+Upload File
+
+Multer
+
+Frontend
+
+HTML5
+CSS3
+Vanilla JavaScript
+Langkah Instalasi dan Menjalankan Program
+1. Menyiapkan Database
+Jalankan Apache dan MySQL melalui XAMPP Control Panel.
+Buka phpMyAdmin atau MySQL Command Line.
+Import file setup_db.sql untuk membuat database db_perpustakaan beserta seluruh tabel yang diperlukan.
+Sebagai alternatif, jalankan perintah berikut agar database dibuat secara otomatis:
+node setup_db.js
+2. Menginstal Package
+
+Masuk ke folder proyek melalui Terminal atau Command Prompt, kemudian jalankan:
+
 npm install
-Menjalankan Server
 
-Di terminal yang sama, jalankan:
+Perintah tersebut akan menginstal seluruh package yang dibutuhkan oleh aplikasi.
+
+3. Menjalankan Server
+
+Setelah proses instalasi selesai, jalankan server menggunakan perintah:
+
 node app.js
-Server akan berjalan pada port 3000. Akan muncul log SERVER BERHASIL DIJALANKAN di terminal.
-Mengakses Aplikasi
 
-Buka browsernya dan navigasikan ke: http://localhost:3000
-Struktur Direktori
-config/db.js: Konfigurasi koneksi ke database MySQL.
-controllers/: Logika bisnis (buku, peminjam, transaksi).
-routes/: Definisi endpoint API RESTful.
-public/: File statis untuk frontend (HTML, CSS, JS).
-uploads/: Direktori penyimpanan file gambar sampul buku.
-app.js: Entry point / file utama aplikasi Node.js.
-setup_db.sql: Skrip inisialisasi tabel database.
-Dibuat untuk memenuhi tugas UAS Pemrograman Web - CRUD dan Upload File JS & MySQL.
+Apabila berhasil, server akan aktif pada port 3000 dan terminal akan menampilkan informasi bahwa aplikasi berhasil dijalankan.
+
+4. Membuka Aplikasi
+
+Buka browser, kemudian akses alamat berikut:
+
+http://localhost:3000
+
+Aplikasi Dashboard Perpustakaan siap digunakan.
+
+Struktur Folder
+config/db.js → Konfigurasi koneksi database MySQL.
+controllers/ → Berisi proses atau logika utama aplikasi.
+routes/ → Menyimpan seluruh endpoint REST API.
+public/ → File frontend seperti HTML, CSS, dan JavaScript.
+uploads/ → Tempat penyimpanan gambar sampul buku yang diunggah.
+app.js → File utama untuk menjalankan server Express.
+setup_db.sql → Skrip SQL untuk membuat database dan tabel.
+Keterangan
+
+Aplikasi ini dibuat sebagai implementasi materi Pemrograman Web dengan memanfaatkan konsep CRUD (Create, Read, Update, Delete), REST API, serta fitur upload file menggunakan JavaScript, Node.js, Express, dan MySQL sebagai syarat penyelesaian Ujian Akhir Semester (UAS).
